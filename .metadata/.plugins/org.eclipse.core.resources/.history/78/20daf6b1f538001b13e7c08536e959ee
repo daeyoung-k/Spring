@@ -1,0 +1,11 @@
+package ex07.quiz;
+
+public class Cumputer {
+	
+	//키보드, 마우스, 모니터에 대한 멤버변수를 만들고, resource, autowired를 사용해서 자동주입.
+	//main에서 cumputer의 info 기능을 확인
+	
+	public void cumputerinfo() {
+		
+	}
+}

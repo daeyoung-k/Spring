@@ -1,0 +1,13 @@
+package ex01;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+	public static void main(String[] args) {
+//		SpringTest st = new SpringTest();
+//		st.test();
+		
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("application-context.xml");
+		
+	}
+}

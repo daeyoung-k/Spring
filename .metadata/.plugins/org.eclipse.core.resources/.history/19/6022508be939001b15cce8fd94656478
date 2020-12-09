@@ -1,0 +1,8 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller //컴포넌트 스캔이 읽어서 빈으로 생성
+public class RequestController {
+
+}

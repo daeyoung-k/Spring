@@ -1,0 +1,14 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller //컴포넌트 스캔이 읽어서 빈으로 생성
+public class RequestController {
+	
+	//req_ex01화면처리 메서드
+	@RequestMapping("/kkkk")
+	public void req_ex01() {
+		System.out.println("실행됨");
+	}
+}

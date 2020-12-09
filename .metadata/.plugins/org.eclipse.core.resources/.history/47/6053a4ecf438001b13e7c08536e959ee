@@ -1,0 +1,8 @@
+package ex07.quiz;
+
+public class Cumputer {
+	
+	public void cumputerinfo() {
+		
+	}
+}

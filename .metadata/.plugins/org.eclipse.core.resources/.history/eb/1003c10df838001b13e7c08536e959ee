@@ -1,0 +1,60 @@
+package ex07.quiz;
+
+import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class Cumputer {
+	
+	//키보드, 마우스, 모니터에 대한 멤버변수를 만들고, resource, autowired를 사용해서 자동주입.
+	//main에서 cumputer의 info 기능을 확인
+	
+	public void cumputerinfo() {
+		
+	}
+	
+	
+	@Resource(name = "mouse")
+	private Mouse mouse;
+	@Autowired
+	private Monitor monitor;
+	@Autowired
+	private Keyboard keyboard;
+	
+	public Cumputer(Mouse mouse, Monitor monitor, Keyboard keyboard) {
+		super();
+		this.mouse = mouse;
+		this.monitor = monitor;
+		this.keyboard = keyboard;
+	}
+
+	public Mouse getMouse() {
+		return mouse;
+	}
+
+	public void setMouse(Mouse mouse) {
+		this.mouse = mouse;
+	}
+
+	public Monitor getMonitor() {
+		return monitor;
+	}
+
+	public void setMonitor(Monitor monitor) {
+		this.monitor = monitor;
+	}
+
+	public Keyboard getKeyboard() {
+		return keyboard;
+	}
+
+	public void setKeyboard(Keyboard keyboard) {
+		this.keyboard = keyboard;
+	}
+	
+	
+	
+	
+	
+	
+}

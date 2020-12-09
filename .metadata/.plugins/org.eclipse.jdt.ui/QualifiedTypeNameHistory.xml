@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="ex01.SpringTest"/>
+<fullyQualifiedTypeName name="ex02_construct.Hotel"/>
+<fullyQualifiedTypeName name="ex02_construct.Chef"/>
+<fullyQualifiedTypeName name="ex03.setter.DatabaseDev"/>
+<fullyQualifiedTypeName name="ex03.setter.MemberDAO"/>
+<fullyQualifiedTypeName name="ex04.quiz.Car"/>
+<fullyQualifiedTypeName name="ex04.quiz.IBattery"/>
+<fullyQualifiedTypeName name="ex04.quiz.Battery1"/>
+<fullyQualifiedTypeName name="ex04.quiz.Airplane"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+</qualifiedTypeNameHistroy>

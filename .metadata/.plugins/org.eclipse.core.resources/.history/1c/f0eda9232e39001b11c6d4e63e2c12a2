@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="SpringMake">
+        <property name="context-root" value="SpringMake"/>
+        <property name="java-output-path" value="/SpringMake/build/classes"/>
+    </wb-module>
+</project-modules>

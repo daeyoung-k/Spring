@@ -1,0 +1,27 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller //컴포넌트 스캔이 읽어서 빈으로 생성
+@RequestMapping("/request")
+public class RequestController {
+	
+	//req_ex01화면처리 메서드
+	//'void형' 메서드는 들어온 요청경로 그대로 뷰리졸버로 값이 반환됩니다.
+//	@RequestMapping("/request/req_ex01")
+//	public void req_ex01() {
+//		System.out.println("실행됨");
+//	}
+	
+	@RequestMapping("/req_ex01")
+	public String req_ex01() {
+		
+		return "request/req_ex01";
+	}
+	
+	@RequestMapping("/basic1")
+	public void basic1() {
+		System.out.println("basic1요청");
+	}
+}
