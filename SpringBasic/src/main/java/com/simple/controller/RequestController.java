@@ -117,7 +117,16 @@ public class RequestController {
 		System.out.println(id);
 		System.out.println(pw);
 		
-		return "request/req_ex02_result";
+		if(id.equals("abc123")) {
+			if(pw.equals("xxx123")) {
+				return "request/req_quiz01_ok";
+			}else {
+				return "request/req_quiz01_no";
+			}
+		}else {
+			return "request/req_quiz01_no";
+		}		
+		
 	}
 	
 	
