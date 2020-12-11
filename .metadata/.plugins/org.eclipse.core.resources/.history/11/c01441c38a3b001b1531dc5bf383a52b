@@ -1,0 +1,57 @@
+package com.simple.dao;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+
+import com.simple.command.BoardVO;
+
+
+@Service("boardDAO")
+public class BoardDAOImpl implements BoardDAO{
+	
+//	private ArrayList<BoardVO> list = new ArrayList<>();
+//
+//	@Override
+//	public void boardRegist(BoardVO vo) {		
+//		list.add(vo);
+//		System.out.println(list);
+//		
+//	}
+//
+//	@Override
+//	public ArrayList<BoardVO> getList() {		
+//		return list;
+//	}
+//
+//	@Override
+//	public void boardDelete(int num) {		
+//		list.remove(num);
+//		
+//	}
+	
+	@Autowired
+	private JdbcTemplate jdbct;
+	
+	@Override
+	public void boardRegist(BoardVO vo) {
+		String sql = "insert into board values(board_seq, ?, ?, ?)";
+		jdbct.update(sql, new Object[] {vo.getName(), vo.getTitle(), vo.getContent()});		
+	}
+
+	@Override
+	public ArrayList<BoardVO> getList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void boardDelete(int num) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+
+}

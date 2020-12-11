@@ -1,0 +1,20 @@
+스코어 테이블
+create table score(
+    num number(10),
+    name VARCHAR2(30),
+    kor VARCHAR2(30),
+    eng VARCHAR2(30),
+    math VARCHAR2(30)
+);
+alter table score add CONSTRAINT score_pk PRIMARY key (num);
+create SEQUENCE score_seq start with 1 INCREMENT by 1 nocache;
+
+보드테이블
+create table board(
+    num number(10),
+    name VARCHAR2(30),
+    title VARCHAR2(30),
+    content VARCHAR2(100)
+);
+alter table board add CONSTRAINT board_pk PRIMARY key (num);
+create SEQUENCE board_seq start with 1 INCREMENT by 1 nocache;
