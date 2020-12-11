@@ -1,0 +1,29 @@
+package com.simple.controller;
+
+import java.util.Date;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/response")
+public class ResponseController {
+	
+	@RequestMapping("/res_ex01")
+	public String res_ex01() {
+		
+		return "response/res_ex01";
+	}
+	
+	//model전달자 - 메서드 매개변수로 Model or ModelMap 선언 - addAttribute(키, 값)
+	@RequestMapping("res_ex02")
+	public String res_ex02(Model model) {
+		
+		model.addAttribute("serverTime", new Date()); //serverTime 이름으로 날짜를 저장
+		model.addAttribute("name", "홍길동");
+		model.addAttribute("addr", "서울시");
+		
+		return "response/res_ex02";
+	}
+}

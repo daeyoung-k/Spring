@@ -1,0 +1,17 @@
+package com.simple.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.simple.command.ScoreVO;
+
+@Repository("scoreDAO") //scoreDAO 이름으로 bean생성
+public class ScoreDAOImpl implements ScoreDAO{
+
+	@Override
+	public void scoreRegist(ScoreVO vo) {
+		
+		System.out.println(vo.toString());
+		
+	}
+
+}

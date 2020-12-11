@@ -1,0 +1,5 @@
+package com.simple.service;
+
+public class BoardServiceImpl {
+
+}

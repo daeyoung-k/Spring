@@ -1,0 +1,14 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/response")
+public class ResponseController {
+	
+	@RequestMapping("/res_ex01")
+	public String res_ex01() {
+		
+	}
+}

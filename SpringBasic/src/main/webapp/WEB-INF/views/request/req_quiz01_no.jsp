@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h2>로그인 실패!!</h2>
+	<a href="req_quiz01">재시도</a>
 </body>
 </html>

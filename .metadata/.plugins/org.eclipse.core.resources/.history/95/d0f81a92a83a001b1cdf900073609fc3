@@ -1,0 +1,31 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.simple.command.Quiz01VO;
+
+@Controller
+@RequestMapping("/quiz")
+public class QuizController {
+	
+	@RequestMapping("/quiz01")
+	public String quiz01() {
+		return "quiz/quiz01";
+	}
+	@RequestMapping("/quiz01_ok")
+	public String quiz01_ok() {
+		return "quiz/quiz01_ok";
+	}
+	
+	@RequestMapping(value="sendBirth", method = RequestMethod.POST)
+	public String sendBirth(Quiz01VO vo,
+							RedirectAttributes ra) {
+		ra.addAttribute("year", vo.getYear());
+		ra.addAttribute("month", vo.getMonth());
+		ra.addAttribute("day", vo.getDay());
+		return "redirect:quiz01_ok";
+	}
+}

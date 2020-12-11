@@ -1,0 +1,46 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+@Controller
+@RequestMapping("/service")
+public class BoardController {
+	
+	
+	@RequestMapping("/boardRegister")
+	public String boardRegister() {		
+		return "service/boardRegister";
+	}
+	
+	@RequestMapping("/boardResult")
+	public String boardResult() {
+		return "service/boardResult";
+	}
+	
+	@RequestMapping("/boardList")
+	public String boardList() {
+		return "service/boardList";
+	}
+	
+	@RequestMapping("/boardForm")
+	public String boardForm(@RequestParam(value="name", required = false , defaultValue = "") String name,
+							@RequestParam(value="title", required = false , defaultValue = "") String title,
+							@ModelAttribute("content") String content,
+							RedirectAttributes ra) {
+		
+		if(name.equals("")) {
+			ra.addFlashAttribute("msg", "이름을 입력하세요");
+			return "service/boardRegister";
+		}
+		
+		System.out.println(name);
+		System.out.println(title);
+		System.out.println(content);
+		
+		return "service/boardResult";
+	}
+}

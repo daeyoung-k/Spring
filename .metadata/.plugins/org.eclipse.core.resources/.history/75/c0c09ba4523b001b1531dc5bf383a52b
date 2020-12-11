@@ -1,0 +1,38 @@
+package com.simple.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/service")
+public class BoardController {
+	
+	
+	@RequestMapping("/boardRegister")
+	public String boardRegister() {		
+		return "service/boardRegister";
+	}
+	
+	@RequestMapping("/boardResult")
+	public String boardResult() {
+		return "service/boardResult";
+	}
+	
+	@RequestMapping("/boardList")
+	public String boardList() {
+		return "service/boardList";
+	}
+	
+	@RequestMapping("/boardForm")
+	public String boardForm(@ModelAttribute("name") String name,
+							@ModelAttribute("title") String title,
+							@ModelAttribute("content") String content) {
+		
+		System.out.println(name);
+		System.out.println(title);
+		System.out.println(content);
+		
+		return "service/boardResult";
+	}
+}
