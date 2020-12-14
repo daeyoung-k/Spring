@@ -13,10 +13,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
 import com.simple.command.BoardVO;
+import com.simple.mapper.BoardMapper;
 
 
 @Service("boardDAO")
 public class BoardDAOImpl implements BoardDAO{
+
 	
 //	private ArrayList<BoardVO> list = new ArrayList<>();
 //
@@ -76,5 +78,4 @@ public class BoardDAOImpl implements BoardDAO{
 		
 	}
 	
-
 }
