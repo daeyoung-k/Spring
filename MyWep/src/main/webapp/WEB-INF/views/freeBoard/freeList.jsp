@@ -1,5 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="/WEB-INF/views/include/header.jsp" %>
     <section>
         <div class="container-fluid">
             <div class="row">
@@ -82,6 +83,6 @@
             </div>
         </div>
 	</section>
-
+<%@include file="/WEB-INF/views/include/footer.jsp" %>
 
 

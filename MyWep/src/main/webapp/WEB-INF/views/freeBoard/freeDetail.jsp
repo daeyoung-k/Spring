@@ -1,6 +1,6 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@include file="/WEB-INF/views/include/header.jsp" %>
     <section>
         <div class="container">
             <div class="row">
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </section>
-        
+<%@include file="/WEB-INF/views/include/footer.jsp" %>
 	<!-- 모달 -->
 	<div class="modal fade" id="replyModal" role="dialog">
 		<div class="modal-dialog modal-md">
