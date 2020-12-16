@@ -14,7 +14,7 @@
 	<resources mapping="/resources/**" location="/resources/" />
 	
 	<!-- 타일즈 템플릿의 설정 -->
-	<beans:bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+	<beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions">
 			<beans:list>
 				<beans:value>/WEB-INF/tiles/tiles.xml</beans:value><!-- 타일즈 템플릿 설정 파일 경로 -->
@@ -37,7 +37,16 @@
 		<beans:property name="order" value="2"/><!-- 두번째로 동작 -->
 	</beans:bean>
 	
-	<context:component-scan base-package="com.team404.controller" />	
+	<!-- <context:component-scan base-package="com.team404.controller" />
+	<context:component-scan base-package="com.team404.freeboard.service"/>
+		 -->
+	
+	<!-- include는 해당 어노테이션만 읽도록 추가, exclude는 해당 어노테이션을 제외, exprssion에는 어노테이션의 타입 -->
+	<context:component-scan base-package="com.team404.*">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+	</context:component-scan>
 	
 	
 	

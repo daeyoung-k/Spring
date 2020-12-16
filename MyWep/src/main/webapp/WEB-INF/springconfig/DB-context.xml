@@ -36,5 +36,8 @@
 	</bean>
 	
 	<!-- 매퍼 경로 -->
+	<!-- 매퍼스캔명령으로 인터페이스 위치를 지정 -->
+	<mybatis-spring:scan base-package="com.team404.*.mapper"/>
+	
 	
 </beans>
