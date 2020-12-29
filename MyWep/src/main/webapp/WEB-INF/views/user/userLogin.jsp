@@ -8,17 +8,17 @@
                     <div class="titlebox">
                         로그인
                     </div>
-                    <form>
+                    <form action="login" method="post">
                         <div class="form-group"><!--사용자클래스선언-->
                             <label for="id">아이디</label>
-                            <input type="text" class="form-control" id="myid" placeholder="아이디">                            
+                            <input type="text" class="form-control" id="myid" name="userId" placeholder="아이디">                            
                          </div>
                          <div class="form-group"><!--사용자클래스선언-->
                             <label for="id">비밀번호</label>
-                            <input type="password" class="form-control" id="mypw" placeholder="비밀번호">
+                            <input type="password" class="form-control" id="mypw" name="userPw" placeholder="비밀번호">
                          </div>
                          <div class="form-group">
-                            <button type="button" class="btn btn-info btn-block" id="goLogin">로그인</button>
+                            <button type="submit" class="btn btn-info btn-block" id="goLogin">로그인</button>
                             <button type="button" class="btn btn-primary btn-block" onclick="location='userJoin'">회원가입</button>
                          </div>
                     </form>                
@@ -27,7 +27,7 @@
         </div>
     </section>
 	
-	<script type="text/javascript">
+	<!-- <script type="text/javascript">
 		$("#goLogin").click(function(){
 			var id = $("#myid").val();
 			var pw = $("#mypw").val();
@@ -55,12 +55,6 @@
 					error:function(status, error){}
 				})	
 			}
-		})
+		})	
 		
-		
-		
-		
-		
-		
-		
-	</script>
+	</script> -->

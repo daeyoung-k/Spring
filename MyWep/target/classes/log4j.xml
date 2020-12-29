@@ -10,8 +10,8 @@
 		</layout>
 	</appender>
 	
-	<!-- Application Loggers -->
-	<logger name="com.team404.myweb">
+	<!-- aop패키지를 로그레벨로 추가 -->
+	<logger name="com.team404.common.util.aop">
 		<level value="info" />
 	</logger>
 	

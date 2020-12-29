@@ -103,7 +103,9 @@
 		                        	<li><a href="#" data-page="${pageVO.endPage+1 }">다음</a></li>
 		                        </c:if>
 		                    </ul>
-	                    <button type="button" class="btn btn-info" onclick="location.href='freeRegist'">글쓰기</button>
+		                <c:if test="${sessionScope.userVO != null}">
+	                    	<button type="button" class="btn btn-info" onclick="location.href='freeRegist'">글쓰기</button>
+	                    </c:if>
 	                    </div>
 	                    
 	                    <!-- 폼 형식으로 보내는데 숨겨서 보낼값 hidden으로 표시 -->

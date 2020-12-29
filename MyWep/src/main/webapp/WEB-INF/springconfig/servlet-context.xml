@@ -46,8 +46,15 @@
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Service"/>
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Component"/>
 	</context:component-scan>
 	
-	
+	<!-- 파일 업로드 설정 (id를 반드시 multipartResolver 이름으로 선언!)-->
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 최대업로드 가능한 크기 -->
+		<beans:property name="maxUploadSize" value="52428800"/>
+		<!-- 인코딩 설정 -->
+		<beans:property name="defaultEncoding" value="UTF-8"/>
+	</beans:bean>
 	
 </beans:beans>
