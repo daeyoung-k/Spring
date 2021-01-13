@@ -1,3 +1,5 @@
 #Tomcat publish data
-#Mon Dec 14 17:47:44 KST 2020
+#Mon Jan 11 11:45:12 KST 2021
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\a5678\\.m2\\repository\\org\\springframework\\spring-web\\5.0.7.RELEASE\\spring-web-5.0.7.RELEASE.jar=D\:\\java\\apache-tomcat-9.0.39\\apache-tomcat-9.0.39\\wtpwebapps\\MyWep\\WEB-INF\\lib\\spring-web-5.0.7.RELEASE.jar
+org.eclipse.jst.jee.server\:SpringBasic=D\:\\java\\apache-tomcat-9.0.39\\apache-tomcat-9.0.39\\wtpwebapps\\SpringBasic
 org.eclipse.jst.jee.server\:MyWep=D\:\\java\\apache-tomcat-9.0.39\\apache-tomcat-9.0.39\\wtpwebapps\\MyWep

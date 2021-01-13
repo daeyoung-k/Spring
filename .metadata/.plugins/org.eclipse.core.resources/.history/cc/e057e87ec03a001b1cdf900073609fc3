@@ -1,5 +1,0 @@
-package com.simple.dao;
-
-public class ScoreDAOImpl implements ScoreDAO{
-
-}

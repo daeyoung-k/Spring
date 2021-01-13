@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<!-- 1. namespace에서 mvc 기능 추가 : 인터셉터 기능이 mvc에 들어있음.-->  
+	<!-- 2. web.xml에 설정파일로 추가 -->
+
+	<!-- 3. 인터셉터클래스를 bean으로 생성 -->
+	<bean id="UserAuthHandler" class="com.team404.common.util.interceptor.UserAuthHandler"/>
+	<bean id="BoardAuthHandler" class="com.team404.common.util.interceptor.BoardAuthHandler"/>
+	<bean id="UserLoginSuccessHandler" class="com.team404.common.util.interceptor.UserLoginSuccessHandler"/> 
+	
+	<mvc:interceptors>
+		<!-- 로그인된 유저만 사용할수 있는 권한 핸들러 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/user/userMypage"/>  <!-- 마이페이지 -->
+			<mvc:mapping path="/freeBoard/freeRegist"/>  <!-- 글등록화면 -->
+			<ref bean="UserAuthHandler"/>   <!-- 위에서 만든 userAuthHandler가 동작 -->
+		</mvc:interceptor>
+		
+		<!-- 게시글 수정, 변경, 삭제에 대한 권한 핸들러 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/freeBoard/freeModify"/>
+			<mvc:mapping path="/freeBoard/modifyForm"/>
+			<mvc:mapping path="/freeBoard/deleteForm"/>
+			<ref bean="BoardAuthHandler"/>
+		</mvc:interceptor>
+		
+		<!-- 로그인 이후에 실행되는 PostHandler -->
+		<mvc:interceptor>
+			<mvc:mapping path="/user/login"/> 
+			<ref bean="UserLoginSuccessHandler"/>
+		</mvc:interceptor>		
+		
+	</mvc:interceptors>
+	
+	<!-- namespace에서 aop설정을 추가 -->
+	<!-- proxy를 생성하고, 자바에서 어노테이션 방법을 사용하도록 처리 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+</beans>

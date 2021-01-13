@@ -1,5 +1,0 @@
-package com.simple.service;
-
-public interface ScoreService {
-
-}

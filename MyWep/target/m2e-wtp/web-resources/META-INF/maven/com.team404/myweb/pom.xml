@@ -204,6 +204,17 @@
 		    <version>2.4</version>
 		</dependency>
 		
+		<!-- R연동 -->
+		<dependency>
+		    <groupId>org.nuiton.thirdparty</groupId>
+		    <artifactId>Rserve</artifactId>
+		    <version>1.8-5</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.rosuda.REngine</groupId>
+		    <artifactId>REngine</artifactId>
+		    <version>2.1.0</version>
+		</dependency>
 				       
 	</dependencies>
     <build>

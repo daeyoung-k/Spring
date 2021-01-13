@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.team404.reply.mapper.ReplyMapper">
+	
+	<insert id="replyRegist">
+		insert into FREEREPLY(bno, rno, reply, replyId, replyPw)
+		values(#{bno}, freereply_seq.nextval, #{reply}, #{replyId}, #{replyPw})	
+	</insert>
+	
+	<select id="getList" resultType="ReplyVO">
+		<![CDATA[
+		select *
+			from(
+			    select rownum as rn,
+			            a.*
+			    from(select * 
+			        from freereply
+			        where bno = #{bno}
+			        order by rno desc)a
+		) where rn > (#{cri.pageNum} -1) * #{cri.amount}  and rn <= #{cri.pageNum} * #{cri.amount}
+		]]>
+	</select>
+	
+	<select id="getTotal" resultType="int">
+		select count(*) from FREEREPLY where bno = #{bno}
+	</select>
+	
+	<update id="update">
+		update FREEREPLY
+		set reply = #{reply}, 
+		updatedate = sysdate
+		where rno = #{rno} and replyPw = #{replyPw}
+	</update>
+	
+	<delete id="delete">
+		delete from FREEREPLY
+		where rno = #{rno} and replyPW = #{replyPw}
+	</delete>
+	
+	<select id="pwCheck" resultType="int">
+		select count(*) from FREEREPLY where rno = #{rno} and replyPw = #{replyPw}
+	</select>
+</mapper>

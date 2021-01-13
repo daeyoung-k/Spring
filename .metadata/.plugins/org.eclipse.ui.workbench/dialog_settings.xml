@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="NewWizardAction">
-		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.wst.xml.ui.internal.wizards.NewXMLWizard"/>
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jst.jsp.ui.internal.wizard.NewJSPWizard"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.jst.ws.ui.new"/>
-			<item value="org.eclipse.wst.XMLCategory"/>
+			<item value="org.eclipse.wst.web.ui"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
@@ -18,6 +16,14 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="true"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\넌할수있어.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\동거이.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\프로그램구현.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\살아나거라.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\MyWeb수정본.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\Spring\MyWeb수정.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\롬복타일즈설정.zip"/>
+			<item value="C:\Users\a5678\OneDrive\바탕 화면\학점은행제\code\MyWeb초기.zip"/>
 			<item value="C:\Users\a5678\OneDrive\바탕 화면\SpringBasic.zip"/>
 		</list>
 	</section>

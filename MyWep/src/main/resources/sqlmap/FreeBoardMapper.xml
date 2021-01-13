@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.team404.freeboard.mapper.FreeBoardMapper">
+  	
+  	<insert id="regist">
+  		insert into freeboard(bno, title, writer, content) 
+  		values(freeboard_seq.nextval, #{title}, #{writer}, #{content})
+  	</insert>
+  	
+  	<!-- 동적쿼리구문의 조건에는 map의 키값이나 vo의 setter값의 이름이 전달됩니다. -->
+  	<!-- CDATA는 XML문서에서 부등호를 사용할때 문자열 그대로 인식되도록 하기 위해서 사용합니다. -->
+  	<select id="getList" resultType="FreeBoardVO">
+  		<![CDATA[
+		select *
+		from(select rownum as rn,
+		            a.*
+		     from(select * 
+		          from freeboard
+		]]>          
+		          
+		          <if test="searchType == 'title' "> where title like '%' || #{searchName} || '%'</if>
+		          <if test="searchType == 'writer'"> where writer like '%' || #{searchName} || '%'</if>
+		          <if test="searchType == 'content'"> where content like '%' || #{searchName} || '%'</if>
+		          <if test="searchType == 'titcont'"> where title like '%' || #{searchName} || '%' or content like '%' || #{searchName} || '%' </if>
+		          <if test="searchType == null or searchType == ''">where 1 = 1</if>
+		          <!-- <choose>
+		          	<when test=""></when>
+		          	<when test=""></when>
+		          	<otherwise></otherwise>
+		          </choose> -->
+		<![CDATA[          
+		          
+		          
+		          
+		          order by bno desc)a)
+		where rn > (#{pageNum}-1) * #{amount} and rn <= #{pageNum} * #{amount}
+		]]>
+  	</select>
+  	
+  	<select id="getContent" resultType="FreeBoardVO">
+  		select * from freeboard where bno = #{bno}
+  	</select>
+  	
+  	<update id="update">
+  		update freeboard set title = #{title}, writer = #{writer}, content = #{content}, updatedate = sysdate where bno = #{bno}
+  	</update>
+  	
+  	<delete id="delete">
+  		delete from freeboard where bno = #{bno}
+  	</delete>
+  	
+  	<select id="getTotal" resultType="int">
+  		select count(*) as total
+  		from freeboard
+  		<if test="searchType == 'title' "> where title like '%' || #{searchName} || '%'</if>
+		<if test="searchType == 'writer'"> where writer like '%' || #{searchName} || '%'</if>
+		<if test="searchType == 'content'"> where content like '%' || #{searchName} || '%'</if>
+		<if test="searchType == 'titcont'"> where title like '%' || #{searchName} || '%' or content like '%' || #{searchName} || '%' </if>
+		<if test="searchType == null or searchType == ''">where 1 = 1</if>
+  	</select>
+  </mapper>
